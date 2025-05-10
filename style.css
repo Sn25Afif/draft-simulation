@@ -1,0 +1,682 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #1c1c1c;
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 32px;
+}
+
+#control-panel {
+  margin-bottom: 20px;
+}
+
+#control-panel select, #control-panel button {
+  padding: 8px 16px;
+  margin: 0 5px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+#control-panel select {
+  background-color: #2c2c2c;
+  color: #fff;
+}
+
+#control-panel button {
+  background-color: #4da6ff;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#control-panel button:hover {
+  background-color: #3c8bd6;
+}
+
+#draft-layout {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin-top: 30px;
+}
+
+.team {
+  width: 20%;
+  background: #2b2b2b;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+#center-area {
+  width: 40%;
+}
+
+#hero-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+#hero-list button {
+  margin: 3px;
+  padding: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #333;
+  color: #fff;
+  border: 2px solid #555;
+  border-radius: 10px;
+  width: 80px;
+  height: 80px;
+  transition: 0.3s;
+}
+
+#hero-list button:hover {
+  background-color: #555;
+}
+
+.ban-list {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.ban-list div {
+  margin: 5px;
+  padding: 5px 10px;
+  background-color: #ff4d4d;
+  color: white;
+  border-radius: 8px;
+  font-size: 14px;
+  min-width: 80px;
+  text-align: center;
+  border: 2px solid #aa0000;
+  position: relative;
+}
+
+.ban-list div::after {
+  content: '❌';
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 16px;
+  color: #ff0000;
+}
+
+.pick-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pick-list div {
+  margin: 8px 0;
+  padding: 8px 12px;
+  background-color: #4da6ff;
+  color: white;
+  border-radius: 10px;
+  font-size: 14px;
+  min-width: 80px;
+  text-align: center;
+  border: 2px solid #007bff;
+}
+
+#phase-info {
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #333;
+  border-radius: 10px;
+  display: inline-block;
+  border: 2px solid #4da6ff;
+}
+
+#hero-list button {
+  margin: 3px;
+  padding: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #333;
+  color: #fff;
+  border: 2px solid #555;
+  border-radius: 10px;
+  width: 80px;
+  height: 80px;
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#hero-list button img {
+  width: 50px;  /* Ukuran gambar */
+  height: 50px; /* Ukuran gambar */
+  object-fit: cover;  /* Agar gambar tidak terdistorsi */
+  border-radius: 5px;
+  margin-bottom: 3px;  /* Jarak antara gambar dan nama hero */
+}
+
+#hero-list button:hover {
+  background-color: #555;
+}
+
+#hero-list button span {
+  font-size: 10px;  /* Ukuran font hero */
+  text-align: center;
+}
+
+.ban-list div, .pick-list div {
+  background-color: transparent;
+  border: none;
+  position: relative;
+  width: 70px;
+  height: 70px;
+  margin: 5px;
+}
+
+.ban-list img, .pick-list img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #ff4d4d; /* Default warna ban */
+}
+
+.pick-list img {
+  border: 2px solid #4da6ff; /* Warna pick */
+}
+
+.ban-list div::after {
+  content: '❌';
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #ff4d4d;
+  color: white;
+  font-size: 14px;
+  border-radius: 50%;
+  padding: 2px 5px;
+}
+
+#role-selector {
+  margin: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#role-selector button {
+  background-color: #444;
+  color: white;
+  border: 2px solid #666;
+  border-radius: 6px;
+  padding: 4px 8px;
+  margin: 0px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: 0.3s;
+  min-width: auto; 
+}
+
+#role-selector button:hover {
+  background-color: #666;
+}
+
+#role-selector button.active {
+  background-color: #4da6ff;
+  border-color: #007bff;
+}
+
+#search-bar {
+  margin: 10px 0;
+  text-align: center;
+}
+
+#search-bar input {
+  padding: 10px 15px;
+  width: 250px;
+  max-width: 80%;
+  border-radius: 8px;
+  border: 2px solid #4da6ff;
+  background-color: #2c2c2c;
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+}
+
+#search-bar input::placeholder {
+  color: #aaa;
+}
+
+#lane-selector {
+  margin: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#lane-selector button {
+  background-color: #555;
+  color: white;
+  border: 2px solid #777;
+  border-radius: 6px;
+  padding: 4px 8px;
+  margin: 0px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: 0.3s;
+  min-width: auto; 
+}
+
+#lane-selector button:hover {
+  background-color: #777;
+}
+
+#lane-selector button.active {
+  background-color: #4da6ff;
+  border-color: #007bff;
+}
+
+/* Untuk ban */
+.ban-first, .ban-second {
+  display: grid;
+  gap: 10px; /* jarak lebih besar */
+  grid-auto-flow: column; /* ban sejajar horizontal */
+  justify-content: center;
+  margin: 10px 0;
+}
+
+/* Untuk pick */
+.pick-first, .pick-second {
+  display: flex;
+  flex-direction: column; /* pick vertikal */
+  align-items: center;
+  gap: 10px; /* jarak antar pick */
+  margin: 10px 0;
+}
+
+/* Ukuran hero */
+.ban-first img, .ban-second img, .pick-first img, .pick-second img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid;
+}
+
+/* Warna border */
+.ban-first img, .ban-second img {
+  border-color: #ff4d4d; /* Merah untuk ban */
+}
+
+.pick-first img, .pick-second img {
+  border-color: #4da6ff; /* Biru untuk pick */
+}
+
+audio {
+  display: none;
+}
+
+#saved-drafts {
+  margin-top: 30px;
+  text-align: left;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.draft-card {
+  background-color: #2b2b2b;
+  border: 2px solid #4da6ff;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.draft-card h3 {
+  margin-top: 0;
+  color: #4da6ff;
+}
+
+.draft-info {
+  margin-left: 20px;
+  font-size: 14px;
+}
+
+#hero-list-wrapper {
+  max-height: 500px; /* Atur tinggi maksimal, bisa kamu sesuaikan */
+  overflow-y: auto; /* Scroll vertikal */
+  padding-right: 5px; /* Biar scroll bar tidak nutup hero */
+  border: 2px solid #4da6ff;
+  border-radius: 10px;
+  background-color: #1c1c1c;
+}
+
+/* Saved Drafts Styles */
+.draft-teams-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+.draft-team {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.draft-team.blue-team {
+  background-color: rgba(77, 166, 255, 0.1);
+  border: 1px solid #4da6ff;
+}
+
+.draft-team.red-team {
+  background-color: rgba(255, 77, 77, 0.1);
+  border: 1px solid #ff4d4d;
+}
+
+.draft-team h4 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.draft-team h5 {
+  margin: 10px 0 5px 0;
+  text-align: center;
+}
+
+.team-bans .hero-images,
+.team-picks .hero-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+}
+
+.team-bans .hero-images img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 5px;
+  border: 2px solid #ff4d4d;
+}
+
+.team-picks .hero-images img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 5px;
+  border: 2px solid #4da6ff;
+}
+
+.draft-card small {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  color: #aaa;
+}
+
+/* Next Game button positioning */
+#nextGame {
+  margin-top: 20px;
+  display: none;
+}
+
+/* Add this to your CSS */
+#hero-list button[disabled] .fearless-banned-label {
+  background-color: #ff9900;
+  color: white;
+}
+
+#nextGame {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 10px;
+  background-color: #4da6ff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#nextGame:hover {
+  background-color: #3c8bd6;
+}
+
+#timer {
+  font-weight: bold;
+  color: #4da6ff;
+}
+
+#confirm-selection {
+  margin-top: 10px;
+  text-align: center;
+}
+
+#confirmButton {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 10px;
+  background-color: #4da6ff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#confirmButton:hover {
+  background-color: #3c8bd6;
+}
+
+#phase-info {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: #333;
+  border: 2px solid #4da6ff;
+  padding: 10px 20px;
+  border-radius: 0 0 10px 10px;
+  margin-bottom: 10px;
+}
+
+.hero-pending {
+  border: 3px solid #ffd700 !important; /* border emas/kuning terang */
+  box-shadow: 0 0 10px #ffd700;         /* glow halus */
+  transform: scale(1.05);               /* sedikit lebih besar */
+  z-index: 1;
+}
+
+#filter-toggle {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#switchFilter {
+  background-color: #4da6ff;
+  color: white;
+  border: none;
+  padding: 4px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: 0.3s;
+}
+
+#switchFilter:hover {
+  background-color: #3c8bd6;
+}
+
+.filter-tab {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+#hero-filter-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 998;
+  background-color: #1c1c1c;
+  padding: 10px;
+  border-bottom: 2px solid #4da6ff;
+}
+
+#search-bar-inline input {
+  padding: 6px 8px;
+  width: 150px;
+  border-radius: 8px;
+  border: 2px solid #4da6ff;
+  background-color: #2c2c2c;
+  color: #fff;
+  font-size: 12px;
+  outline: none;
+}
+
+#search-bar-inline input::placeholder {
+  color: #aaa;
+}
+
+#hero-list-wrapper {
+  position: relative;
+  overflow-y: auto;
+  max-height: 500px;
+  border: 2px solid #4da6ff;
+  border-radius: 10px;
+  background-color: #1c1c1c;
+}
+
+/* Tambahkan ini ke style.css */
+#filter-area {
+  position: sticky;
+  top: 60px; /* Sesuaikan dengan tinggi header */
+  z-index: 997;
+  background-color: #1c1c1c;
+  padding: 5px 0;
+  border-bottom: 2px solid #4da6ff;
+  margin-bottom: 10px;
+}
+
+#hero-list-wrapper {
+  position: relative;
+  overflow-y: auto;
+  max-height: 500px;
+  border: 2px solid #4da6ff;
+  border-radius: 10px;
+  background-color: #1c1c1c;
+  margin-top: 10px;
+}
+
+.hero-pickban img {
+  width: 50px; /* dari 60px jadi lebih kecil */
+  height: 50px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 2px solid #4da6ff; /* atau merah untuk ban */
+}
+
+.ban-first .hero-pickban img,
+.ban-second .hero-pickban img {
+  border-color: #ff4d4d; /* merah untuk ban */
+}
+
+.hero-pickban .hero-name {
+  font-size: 10px;
+  color: white;
+  text-align: center;
+  max-width: 50px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+.hero-pickban {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
+  justify-content: center;
+}
+
+.blue-team .hero-pickban {
+  flex-direction: row; /* biru: gambar kiri, nama kanan */
+}
+
+.red-team .hero-pickban {
+  flex-direction: row-reverse; /* merah: nama kiri, gambar kanan */
+}
+
+.hero-pickban img {
+  width: 55px;
+  height: 55px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 2px solid #4da6ff;
+  flex-shrink: 0; /* Pastikan gambar tidak menyusut */
+}
+
+.ban-first .hero-pickban img,
+.ban-second .hero-pickban img {
+  border-color: #ff4d4d; /* Ban warna merah */
+}
+
+.hero-pickban .hero-name {
+  font-size: 12px;
+  color: white;
+  max-width: 80px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  flex-grow: 1;
+}
+
+
+.blue-team .hero-pickban .hero-name {
+  order: 2; /* tim biru: nama di kanan */
+}
+
+.red-team .hero-pickban .hero-name {
+  order: 0; /* tim merah: nama di kiri */
+}
+
+.red-team .pick-first, 
+.red-team .pick-second,
+.red-team .ban-first,
+.red-team .ban-second {
+  align-items: flex-end;
+}
+
+.blue-team .pick-first,
+.blue-team .pick-second,
+.blue-team .ban-first,
+.blue-team .ban-second {
+  align-items: flex-start;
+}
+
+.hero-pickban.dragging {
+  opacity: 0.5;
+}
+
+.dragging {
+  opacity: 0.5;
+}

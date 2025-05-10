@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mobile Legends : Bang Bang - Draft Pick Simulator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Draft Pick Simulator - Moba Mobile</h1>
+
+  <div id="control-panel">
+    <label for="gameSelector">Game:</label>
+<select id="gameSelector">
+  <option value="mlbb">Mobile Legends</option>
+  <option value="hok">Honor of Kings</option>
+</select>
+    <label for="firstPick">Pilih First Pick:</label>
+    <select id="firstPick">
+      <option value="blue">Blue Team</option>
+      <option value="red">Red Team</option>
+    </select>
+    <label for="modeSelector">Mode:</label>
+    <select id="modeSelector">
+      <option value="normal">Normal Ban Pick</option>
+      <option value="global">Global Ban Pick</option>
+      <option value="fearless">Fearless Draft</option>
+    </select>
+    <button id="startDraft">Mulai Draft</button>
+    <button id="resetDraft">Reset Draft</button>
+    <button id="showSavedDraft">Lihat Draft Tersimpan</button>
+    <button onclick="toggleMusic()">Play Music</button>
+    <div id="saved-drafts" style="margin-top: 30px;"></div>
+  </div>
+
+  <audio id="backgroundMusic" loop autoplay>
+    <source src="sounds/backsound.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+
+<div style="margin-top: 20px; text-align: center;">
+  <button id="nextGame" style="display:none;">Next Game</button>
+  <div style="margin-top: 10px; text-align: center;">
+  </div>  
+</div>
+
+
+
+  <div id="draft-area" style="display:none;">
+    <div id="phase-info">
+      <span id="phase-text"></span> - 
+      <span id="timer">45</span>s
+    </div>
+    
+
+    <div id="draft-layout">
+      <div id="blue-team" class="team">
+        <h2>Blue Team</h2>
+        <div class="ban-first" id="blue-ban-first"></div>
+        <div class="pick-first" id="blue-pick-first"></div>
+        <div class="ban-second" id="blue-ban-second"></div>
+        <div class="pick-second" id="blue-pick-second"></div>
+      </div>
+
+      <div id="center-area">
+        <h3>Daftar Hero</h3>
+        <div id="hero-list-wrapper">
+          <!-- Filter dalam daftar hero -->
+          <div id="hero-filter-bar">
+            <div id="filter-toggle">
+              <button id="switchFilter">Switch Filter</button>
+            </div>
+            <div id="search-bar-inline">
+              <input type="text" id="heroSearch" placeholder="Cari hero...">
+            </div>
+          </div>
+          
+
+<div id="filter-area">
+  <div id="role-selector" class="filter-tab active">
+    <button data-role="all">🌟 All</button>
+    <button data-role="Tank">🛡️ Tank</button>
+    <button data-role="Fighter">⚔️ Fighter</button>
+    <button data-role="Mage">🔥 Mage</button>
+    <button data-role="Archer">🎯 Archer</button>
+    <button data-role="Assassin">🗡️ Assassin</button>
+    <button data-role="Support">❤️ Support</button>
+  </div>
+
+  <div id="lane-selector" class="filter-tab" style="display: none;">
+    <button data-lane="all">🌟 All</button>
+    <button data-lane="Jungler">🗡️ Jungler</button>
+    <button data-lane="Midlane">🔥 Midlane</button>
+    <button data-lane="Roamer">🛡️ Roamer</button>
+    <button data-lane="Farm Lane">🎯 Farm Lane</button>
+    <button data-lane="Clash Lane">⚔️ Clash Lane</button>
+  </div>
+</div>
+
+          <div id="hero-list"></div>
+
+        </div>
+      </div>
+      
+
+      <div id="red-team" class="team">
+        <h2>Red Team</h2>
+        <div class="ban-first" id="red-ban-first"></div>
+        <div class="pick-first" id="red-pick-first"></div>
+        <div class="ban-second" id="red-ban-second"></div>
+        <div class="pick-second" id="red-pick-second"></div>
+      </div>
+    </div>
+  </div>
+        <!-- Tombol Select berada di luar wrapper -->
+        <div id="confirm-selection" style="margin-top: 10px; display: none;">
+          <button id="confirmButton" style="padding: 10px 20px; font-size: 16px; border-radius: 8px; background-color: #4da6ff; color: white; border: none; cursor: pointer;">Select</button>
+        </div>
+               
+        <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
